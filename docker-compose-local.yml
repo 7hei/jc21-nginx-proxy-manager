@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  npm:
+    image: localhost/soporenet-nginx-proxy-manager-amd64:latest
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    environment:
+      - DB_SQLITE_FILE=/data/database.sqlite
+      - DB_SQLITE_PASSWORD=changeme
+    volumes:
+      - /u01/mydev/containers-fs-layout/jc21-nginx-proxy-manager/data:/data
+      - /u01/mydev/containers-fs-layout/letsencrypt/etc:/etc/letsencrypt
+    ports:
+      - "8080:80"
+      - "8443:443"
+      - "9020:9020"
