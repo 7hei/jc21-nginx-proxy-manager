@@ -1,6 +1,9 @@
 # Use the official jc21/nginx-proxy-manager image as the base
 FROM docker.io/jc21/nginx-proxy-manager:latest
 
+# Image architecture
+ARG TARGETARCH
+
 # Set environment variables (optional)
 ENV DEBIAN_FRONTEND=noninteractive
 

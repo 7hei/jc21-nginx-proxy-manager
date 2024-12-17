@@ -3,7 +3,7 @@ version: '3'
 services:
   npm:
     image: docker.io/jc21/nginx-proxy-manager:latest
-    container_name: nginx-proxy-manager
+    container_name: jc21-nginx-proxy-manager
     restart: unless-stopped
     environment:
       - DB_SQLITE_FILE=/data/database.sqlite
@@ -12,6 +12,6 @@ services:
       - /u01/mydev/containers-fs-layout/jc21-nginx-proxy-manager/data:/data
       - /u01/mydev/containers-fs-layout/letsencrypt/etc:/etc/letsencrypt
     ports:
-      - "8080:80"
-      - "8443:443"
-      - "9020:81"
+      - "8081:80"
+      - "8444:443"
+      - "9021:81"
